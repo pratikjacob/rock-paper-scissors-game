@@ -14,7 +14,12 @@ Then navigate there from the command line (subsequent commands assume you are ru
 cd Desktop
 cd rock-paper-scissors-game
 
-Install package dependencies (see the ["requirements.txt"](/requirements.txt) file):
+Use Anaconda to create and activate a new virtual environmnt, perhaps called "my-first-env":
+
+conda create -n my-first-env python=3.8
+conda activate my-first-env
+
+After activating the virtual environment, install package dependencies (see the ["requirements.txt"](/requirements.txt) file):
 
 pip install -r requirements.txt
 
@@ -33,4 +38,9 @@ In the root directory of your local repository, create a new file called ".env",
 
 Run the Python script:
 
-python game.py
+python app/game.py
+
+# alternative module-style invocation (only required if importing from one file to another):
+python -m app.my_script
+
+> NOTE: if you see an error like "ModuleNotFoundError: No module named '...'", it's because the given package isn't installed, so run the `pip` command above to ensure that package has been installed into the virtual environment.
